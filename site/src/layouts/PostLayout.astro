@@ -1,0 +1,61 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+
+interface Props {
+  title: string;
+  date: Date;
+  tags: string[];
+  description: string;
+  towelRating?: number;
+}
+
+const { title, date, tags, description, towelRating } = Astro.props;
+const formattedDate = date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const towelFull = '[@]';
+const towelEmpty = '[ ]';
+---
+<BaseLayout title={`${title} | The Startup at the End of the Universe`}>
+  <SEO
+    slot="head"
+    title={title}
+    description={description}
+    article={true}
+    publishDate={date}
+  />
+
+  <article>
+    <header class="post-header">
+      <h1 class="post-title">{title}</h1>
+      <div class="post-meta">
+        <time datetime={date.toISOString()}>Stardate: {formattedDate}</time>
+        {towelRating && (
+          <span class="towel-rating" title={`Towel Rating: ${towelRating}/5`}>
+            Towels: {towelFull.repeat(towelRating)}{towelEmpty.repeat(5 - towelRating)}
+          </span>
+        )}
+      </div>
+    </header>
+
+    <div class="post-content">
+      <slot />
+    </div>
+
+    <div class="ascii-divider">~*~*~*~*~*~*~*~*~*~*~</div>
+
+    <div class="tags" style="margin-top: 1.5rem;">
+      {tags.map((tag) => (
+        <a href={`/tags/${tag}/`} class="tag">{tag}</a>
+      ))}
+    </div>
+
+    <aside class="disclaimer">
+      <strong>TEMPORAL DISCLAIMER:</strong> The views expressed in this post were written at the end of the universe, where time is a bit wobbly. Any factual errors are the fault of entropy, not the author. Don't Panic.
+    </aside>
+  </article>
+</BaseLayout>

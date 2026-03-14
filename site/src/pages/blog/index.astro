@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SEO from '../../components/SEO.astro';
+import PostCard from '../../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const postsByMonth = new Map<string, typeof sortedPosts>();
+for (const post of sortedPosts) {
+  const key = post.data.date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+  });
+  if (!postsByMonth.has(key)) {
+    postsByMonth.set(key, []);
+  }
+  postsByMonth.get(key)!.push(post);
+}
+---
+<BaseLayout title="Archive | The Startup at the End of the Universe">
+  <SEO
+    slot="head"
+    title="Archive | The Startup at the End of the Universe"
+    description="Browse all transmissions from The Startup at the End of the Universe."
+  />
+
+  <h1>Archive</h1>
+
+  {[...postsByMonth.entries()].map(([month, posts]) => (
+    <div class="archive-month">
+      <h2>{month}</h2>
+      {posts.map((post) => (
+        <PostCard
+          id={post.id}
+          title={post.data.title}
+          date={post.data.date}
+          description={post.data.description}
+          tags={post.data.tags}
+          towelRating={post.data.towelRating}
+        />
+      ))}
+    </div>
+  ))}
+</BaseLayout>

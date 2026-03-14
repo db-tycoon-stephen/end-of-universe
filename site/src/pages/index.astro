@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEO from '../components/SEO.astro';
+import PostCard from '../components/PostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const latestPosts = sortedPosts.slice(0, 10);
+---
+<BaseLayout title="The Startup at the End of the Universe">
+  <SEO
+    slot="head"
+    title="The Startup at the End of the Universe"
+    description="Dispatches from the very last server before the heat death of everything. Silly, British, and mildly alarming."
+  />
+
+  <h1>// Latest Transmissions</h1>
+
+  {latestPosts.length > 0 ? (
+    latestPosts.map((post) => (
+      <PostCard
+        id={post.id}
+        title={post.data.title}
+        date={post.data.date}
+        description={post.data.description}
+        tags={post.data.tags}
+        towelRating={post.data.towelRating}
+      />
+    ))
+  ) : (
+    <div class="empty-state">
+      <p>RECEIVING TRANSMISSION...</p>
+      <p><span class="blink">_</span></p>
+      <p style="margin-top: 1.5rem;">No dispatches have arrived yet from the end of spacetime.</p>
+      <p>Check back soon, or try adjusting your ansible.</p>
+    </div>
+  )}
+
+  {sortedPosts.length > 10 && (
+    <p style="margin-top: 2rem;">
+      <a href="/blog/">[ Browse the full archive &rarr; ]</a>
+    </p>
+  )}
+</BaseLayout>
