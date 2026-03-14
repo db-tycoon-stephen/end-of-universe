@@ -13,38 +13,28 @@
   padding: 0;
 }
 
-@font-face {
-  font-family: 'VT323';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('https://fonts.gstatic.com/s/vt323/v17/pxiKyp0ihIEF2isRFJXGdg.woff2') format('woff2');
-}
-
 :root {
-  --color-bg: #0a0a0a;
-  --color-text: #33ff33;
-  --color-text-muted: #1a9e1a;
-  --color-text-dim: #0d6e0d;
-  --color-accent: #ff6600;
-  --color-accent-light: #ff9933;
-  --color-accent-hot: #ff00ff;
-  --color-accent-cyan: #00ffff;
-  --color-border: #33ff33;
-  --color-border-light: #1a5e1a;
-  --color-surface: #0d1a0d;
-  --color-surface-alt: #0a140a;
-  --color-tag-bg: #1a1a00;
-  --color-tag-text: #ffff00;
-  --color-highlight: #1a1a00;
-  --color-link: #00ccff;
-  --color-link-visited: #cc66ff;
-  --max-width: 720px;
-  --font-body: 'VT323', 'Courier New', 'Courier', monospace;
-  --font-mono: 'VT323', 'Courier New', 'Courier', monospace;
-  --scanline-opacity: 0.04;
-  --glow-color: rgba(51, 255, 51, 0.15);
-  --glow-strong: rgba(51, 255, 51, 0.3);
+  --color-bg: #1a1a2e;
+  --color-text: #d4d4e8;
+  --color-text-muted: #9a9ab8;
+  --color-text-dim: #6e6e8a;
+  --color-accent: #e8a040;
+  --color-accent-light: #f0c070;
+  --color-accent-hot: #e060c0;
+  --color-accent-cyan: #60d0d0;
+  --color-border: #3a3a5c;
+  --color-border-light: #2a2a48;
+  --color-surface: #16162a;
+  --color-surface-alt: #1e1e36;
+  --color-tag-bg: transparent;
+  --color-tag-text: #e8a040;
+  --color-highlight: #22223a;
+  --color-link: #70b8e8;
+  --color-link-visited: #b888d8;
+  --max-width: 680px;
+  --font-body: Georgia, 'Times New Roman', serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: 'Courier New', 'Courier', monospace;
 }
 
 /* === Starfield Background === */
@@ -57,88 +47,67 @@ body::before {
   height: 100%;
   z-index: -2;
   background:
-    radial-gradient(1px 1px at 10% 20%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 30% 70%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 50% 10%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 70% 50%, #aaaaff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 90% 80%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 15% 60%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 45% 35%, #ffaaaa 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 80% 15%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 25% 90%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 60% 45%, #aaffaa 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 5% 40%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1.5px 1.5px at 35% 5%, #ffffff 1px, transparent 1.5px),
-    radial-gradient(1px 1px at 75% 95%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 95% 30%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 55% 75%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1.5px 1.5px at 85% 60%, #ffffaa 1px, transparent 1.5px),
-    radial-gradient(1px 1px at 20% 45%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 65% 25%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 40% 85%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 3% 95%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 48% 55%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 92% 12%, #ffffff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 18% 78%, #aaaaff 0.5px, transparent 1px),
-    radial-gradient(1px 1px at 72% 38%, #ffffff 0.5px, transparent 1px);
-  background-color: #0a0a0a;
-}
-
-/* === CRT Scanlines === */
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, var(--scanline-opacity)) 0px,
-    rgba(0, 0, 0, var(--scanline-opacity)) 1px,
-    transparent 1px,
-    transparent 3px
-  );
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.5) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.4) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.5) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 70% 50%, rgba(180,180,255,0.4) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,0.4) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 45% 35%, rgba(255,200,180,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 80% 15%, rgba(255,255,255,0.5) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 25% 90%, rgba(255,255,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 60% 45%, rgba(200,255,200,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 5% 40%, rgba(255,255,255,0.4) 0.5px, transparent 1px),
+    radial-gradient(1.5px 1.5px at 35% 5%, rgba(255,255,255,0.6) 1px, transparent 1.5px),
+    radial-gradient(1px 1px at 75% 95%, rgba(255,255,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 95% 30%, rgba(255,255,255,0.4) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 55% 75%, rgba(255,255,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1.5px 1.5px at 85% 60%, rgba(255,255,200,0.5) 1px, transparent 1.5px),
+    radial-gradient(1px 1px at 20% 45%, rgba(255,255,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 65% 25%, rgba(255,255,255,0.4) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 40% 85%, rgba(255,255,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 48% 55%, rgba(255,255,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 92% 12%, rgba(255,255,255,0.4) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 18% 78%, rgba(180,180,255,0.3) 0.5px, transparent 1px),
+    radial-gradient(1px 1px at 72% 38%, rgba(255,255,255,0.4) 0.5px, transparent 1px);
+  background-color: var(--color-bg);
 }
 
 /* === Typography === */
 html {
-  font-size: 18px;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
-  line-height: 1.6;
-  text-shadow: 0 0 8px var(--glow-color);
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4 {
+  font-family: var(--font-heading);
   line-height: 1.3;
-  font-weight: 400;
+  font-weight: 700;
   color: var(--color-accent-cyan);
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
-  text-transform: uppercase;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  letter-spacing: 0.1em;
+  letter-spacing: -0.01em;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
-  letter-spacing: 0.05em;
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -150,43 +119,42 @@ p {
 a {
   color: var(--color-link);
   text-decoration: underline;
-  text-shadow: 0 0 8px rgba(0, 204, 255, 0.3);
+  text-decoration-color: rgba(112, 184, 232, 0.3);
+  text-underline-offset: 2px;
 }
 
 a:visited {
   color: var(--color-link-visited);
+  text-decoration-color: rgba(184, 136, 216, 0.3);
 }
 
 a:hover {
   color: var(--color-accent-hot);
-  text-shadow: 0 0 12px rgba(255, 0, 255, 0.5);
-  text-decoration: underline;
+  text-decoration-color: var(--color-accent-hot);
 }
 
 strong {
-  font-weight: 400;
-  color: var(--color-accent);
-  text-shadow: 0 0 6px rgba(255, 102, 0, 0.3);
+  font-weight: 700;
+  color: var(--color-text);
 }
 
 blockquote {
-  border-left: 3px double var(--color-accent);
-  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1.25rem;
   margin: 1.5rem 0;
-  color: var(--color-accent-light);
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
 hr {
   border: none;
-  border-top: 1px dashed var(--color-border-light);
+  border-top: 1px solid var(--color-border);
   margin: 2.5rem 0;
 }
 
 ::selection {
   background: var(--color-accent-hot);
-  color: #000000;
-  text-shadow: none;
+  color: #ffffff;
 }
 
 /* === Layout === */
@@ -203,9 +171,8 @@ main {
 
 /* === Header === */
 .site-header {
-  border-bottom: 2px double var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   padding: 1.5rem 0 1rem;
-  background: linear-gradient(180deg, rgba(51, 255, 51, 0.05) 0%, transparent 100%);
 }
 
 .site-header .header-inner {
@@ -216,12 +183,11 @@ main {
 }
 
 .site-title {
-  font-size: 1.8rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
   color: var(--color-accent-cyan);
-  text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 30px rgba(0, 255, 255, 0.15);
 }
 
 .site-title a {
@@ -230,15 +196,15 @@ main {
 }
 
 .site-title a:hover {
-  text-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 255, 255, 0.25);
+  color: var(--color-accent-light);
 }
 
 .site-subtitle {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  margin-top: 0.3rem;
-  letter-spacing: 0.04em;
-  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--color-text-dim);
+  margin-top: 0.25rem;
+  font-style: italic;
 }
 
 .site-nav {
@@ -249,22 +215,21 @@ main {
 }
 
 .site-nav a {
-  font-size: 0.9rem;
-  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 400;
-  padding: 0.2rem 0.75rem;
-  border: 1px solid var(--color-border-light);
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--color-border);
   text-decoration: none;
-  transition: all 0.1s;
+  transition: all 0.15s;
 }
 
 .site-nav a:hover {
-  background: var(--color-text);
+  background: var(--color-accent-cyan);
   color: var(--color-bg);
-  text-shadow: none;
-  border-color: var(--color-text);
+  border-color: var(--color-accent-cyan);
 }
 
 /* === Marquee Banner === */
@@ -274,14 +239,15 @@ main {
   border-top: 1px solid var(--color-border-light);
   border-bottom: 1px solid var(--color-border-light);
   padding: 0.3rem 0;
-  font-size: 0.85rem;
-  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
   background: var(--color-surface);
 }
 
 .marquee-banner .marquee-inner {
   display: inline-block;
-  animation: marquee 30s linear infinite;
+  animation: marquee 35s linear infinite;
 }
 
 @keyframes marquee {
@@ -293,29 +259,27 @@ main {
 .hit-counter {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.9rem;
-  background: #000000;
+  font-size: 0.8rem;
+  background: #0a0a14;
   color: var(--color-accent);
-  border: 2px inset #444444;
-  padding: 0.15rem 0.6rem;
-  letter-spacing: 0.15em;
-  text-shadow: 0 0 6px rgba(255, 102, 0, 0.4);
+  border: 1px solid var(--color-border);
+  padding: 0.1rem 0.5rem;
+  letter-spacing: 0.12em;
 }
 
 /* === Footer === */
 .site-footer {
-  border-top: 2px double var(--color-border);
+  border-top: 1px solid var(--color-border);
   padding: 1.5rem 0;
   margin-top: 3rem;
   text-align: center;
-  background: linear-gradient(0deg, rgba(51, 255, 51, 0.05) 0%, transparent 100%);
 }
 
 .site-footer .footer-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-dim);
   line-height: 1.8;
 }
@@ -328,18 +292,25 @@ main {
   margin-top: 0.75rem;
   display: flex;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
 }
 
 .footer-badge {
   display: inline-block;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.45rem;
   border: 1px solid;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+
+.footer-badge:hover {
+  opacity: 1;
 }
 
 .footer-badge.netscape {
@@ -358,14 +329,14 @@ main {
 }
 
 .footer-badge.towel {
-  border-color: var(--color-tag-text);
-  color: var(--color-tag-text);
+  border-color: var(--color-link);
+  color: var(--color-link);
 }
 
 /* === Post Card === */
 .post-card {
   padding: 1.25rem 0;
-  border-bottom: 1px dashed var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .post-card:last-child {
@@ -373,22 +344,25 @@ main {
 }
 
 .post-card-title {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 700;
   margin-bottom: 0.3rem;
   line-height: 1.35;
 }
 
 .post-card-title a {
-  color: var(--color-link);
+  color: var(--color-text);
+  text-decoration: none;
 }
 
 .post-card-title a:hover {
-  color: var(--color-accent-hot);
+  color: var(--color-accent-cyan);
 }
 
 .post-card-meta {
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
   color: var(--color-text-dim);
   margin-bottom: 0.5rem;
   display: flex;
@@ -397,18 +371,18 @@ main {
 }
 
 .post-card-description {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--color-text-muted);
   margin-bottom: 0.5rem;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* === Towel Rating === */
 .towel-rating {
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-  color: var(--color-tag-text);
-  text-shadow: 0 0 6px rgba(255, 255, 0, 0.3);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
 }
 
 /* === Tags === */
@@ -420,15 +394,15 @@ main {
 
 .tag {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 400;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0.15rem 0.5rem;
+  letter-spacing: 0.03em;
+  padding: 0.15rem 0.45rem;
   background: transparent;
   color: var(--color-tag-text);
-  border: 1px solid var(--color-tag-text);
-  transition: all 0.1s;
+  border: 1px solid var(--color-border);
+  transition: all 0.15s;
 }
 
 a.tag {
@@ -437,26 +411,27 @@ a.tag {
 
 a.tag:hover {
   text-decoration: none;
-  background: var(--color-tag-text);
+  background: var(--color-accent);
   color: var(--color-bg);
-  text-shadow: none;
+  border-color: var(--color-accent);
 }
 
 /* === Post Layout === */
 .post-header {
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px dashed var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .post-title {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   margin-bottom: 0.6rem;
   line-height: 1.25;
 }
 
 .post-meta {
-  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
   color: var(--color-text-dim);
   display: flex;
   gap: 1rem;
@@ -470,7 +445,7 @@ a.tag:hover {
 }
 
 .post-content h2 {
-  border-bottom: 1px dashed var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
   padding-bottom: 0.4rem;
 }
 
@@ -489,14 +464,15 @@ a.tag:hover {
 }
 
 .post-content strong {
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .post-content code {
   font-family: var(--font-mono);
-  font-size: 0.95em;
+  font-size: 0.88em;
   background: var(--color-surface);
-  padding: 0.1em 0.35em;
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
   border: 1px solid var(--color-border-light);
   color: var(--color-accent-light);
 }
@@ -504,6 +480,7 @@ a.tag:hover {
 .post-content pre {
   background: var(--color-surface);
   border: 1px solid var(--color-border-light);
+  border-radius: 3px;
   padding: 1rem;
   overflow-x: auto;
   margin-bottom: 1.25rem;
@@ -520,8 +497,8 @@ a.tag:hover {
   width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
-  font-size: 0.95rem;
-  border: 1px solid var(--color-border-light);
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
 }
 
 .post-content thead {
@@ -530,17 +507,18 @@ a.tag:hover {
 }
 
 .post-content th {
+  font-family: var(--font-heading);
   text-align: left;
-  font-weight: 400;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--color-accent-cyan);
+  color: var(--color-text-muted);
 }
 
 .post-content td {
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.8rem;
   border-bottom: 1px solid var(--color-border-light);
 }
 
@@ -556,7 +534,7 @@ a.tag:hover {
 .post-content td:not(:first-child) {
   text-align: right;
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 /* === Images === */
@@ -565,14 +543,14 @@ a.tag:hover {
   height: auto;
   display: block;
   margin: 2rem auto;
-  border: 2px solid var(--color-border-light);
-  box-shadow: 0 0 10px rgba(51, 255, 51, 0.1);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
 }
 
 .post-content img + br + em,
 .post-content p:has(> em:only-child) {
   display: block;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-dim);
   text-align: center;
   margin-top: -1.25rem;
@@ -585,12 +563,13 @@ a.tag:hover {
 .disclaimer {
   background: var(--color-surface);
   border: 1px solid var(--color-border-light);
-  border-left: 3px double var(--color-accent);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 3px;
   padding: 1rem 1.25rem;
   margin-top: 2.5rem;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--color-text-dim);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* === Empty State === */
@@ -598,6 +577,7 @@ a.tag:hover {
   text-align: center;
   padding: 3rem 1rem;
   color: var(--color-text-dim);
+  font-family: var(--font-mono);
 }
 
 .empty-state .blink {
@@ -615,11 +595,11 @@ a.tag:hover {
 }
 
 .archive-month h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-accent);
-  border-bottom: 1px dashed var(--color-border-light);
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border-light);
   padding-bottom: 0.35rem;
   margin-top: 1rem;
 }
@@ -636,37 +616,36 @@ a.tag:hover {
 /* === Under Construction === */
 .construction-notice {
   text-align: center;
-  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 0.8rem;
   margin: 1.5rem 0;
-  border: 2px dashed var(--color-accent);
+  border: 1px dashed var(--color-accent);
   color: var(--color-accent);
-  font-size: 0.9rem;
-  animation: pulse-border 2s ease-in-out infinite;
-}
-
-@keyframes pulse-border {
-  0%, 100% { border-color: var(--color-accent); }
-  50% { border-color: var(--color-accent-hot); }
+  border-radius: 3px;
 }
 
 /* === ASCII Divider === */
 .ascii-divider {
   text-align: center;
-  color: var(--color-border-light);
-  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: var(--color-border);
+  font-size: 0.8rem;
   margin: 2rem 0;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   user-select: none;
 }
 
 /* === Guestbook Prompt (decorative) === */
 .guestbook-prompt {
   text-align: center;
-  padding: 0.75rem;
+  font-family: var(--font-mono);
+  padding: 0.6rem;
   margin-top: 1rem;
   border: 1px solid var(--color-border-light);
+  border-radius: 3px;
   color: var(--color-text-dim);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .guestbook-prompt a {
@@ -678,20 +657,21 @@ a.tag:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  font-size: 0.85rem;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   color: var(--color-text-dim);
 }
 
 .webring a {
-  color: var(--color-link);
+  color: var(--color-text-muted);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .webring a:hover {
-  color: var(--color-accent-hot);
+  color: var(--color-accent-cyan);
 }
 
 /* === Responsive === */
@@ -699,7 +679,7 @@ a.tag:hover {
   html { font-size: 16px; }
 
   .site-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .site-nav {
@@ -718,7 +698,7 @@ a.tag:hover {
   }
 
   .post-content table {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 
   .post-content th,
