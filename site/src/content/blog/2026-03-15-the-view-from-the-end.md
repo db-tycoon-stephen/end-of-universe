@@ -7,7 +7,7 @@ description: "A small-business owner stares into the void where the future used 
 
 ## The Horizon Problem
 
-It has recently become fashionable to say that we are living through a period of unprecedented change. This is, of course, nonsense. Every period thinks it's unprecedented. The Victorians thought the telegraph was going to end war. The dot-com lot thought we'd all be ordering groceries by drone by 2005. Humans are, as a species, spectacularly bad at knowing what's happening to them while it's happening.
+It has recently become fashionable to say that we are living through a period of unprecedented change. This is, of course, impossible to know until long after it's over. Every period in history thinks it's unprecedented. The Victorians thought the telegraph was going to end war. The dot-com lot thought we'd all be ordering groceries by drone by 2005. Humans are, as a species, spectacularly bad at knowing what's happening to them while it's happening.
 
 That said, something *is* happening.
 
@@ -19,7 +19,7 @@ Behind the fog, if you listen carefully, you can hear the sound of very large co
 
 The facts of the matter are roughly these.
 
-The companies building the AI are consolidating. The companies buying the AI are consolidating. The wealth being generated — and there is quite a lot of it — is flowing upward through a cheerful and well-lubricated system of boards, lobbyists, vendors, and decision-makers, all of whom are optimising, quite rationally, for their own continued existence. One can hardly blame them. Self-preservation is a powerful motivator. It is, in fact, the only motivator, once you strip away the TED talks.
+The companies building the AI are consolidating. The companies buying the AI are also consolidating. The wealth being generated — and there is quite a lot of it — is flowing upward through a cheerful and well-lubricated system of boards, lobbyists, vendors, and decision-makers, all of whom are optimising, quite rationally, for their own continued existence. One can hardly blame them. Self-preservation is a powerful motivator. It is, in fact, the only motivator, once you strip away the TED talks.
 
 This is not a conspiracy. Conspiracies require planning. This is just gravity. Money, left to its own devices, flows toward money. Power accrues to power. And if you are a small-business owner watching this process, it can feel a bit like being a goldfish who has just noticed the bowl is shrinking, and also that the cat has pulled up a chair.
 
