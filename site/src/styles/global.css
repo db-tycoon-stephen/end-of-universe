@@ -76,7 +76,7 @@ body::before {
 
 /* === Typography === */
 html {
-  font-size: 17px;
+  font-size: 19px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -189,7 +189,7 @@ main {
 
 .site-title {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 2.1rem;
   font-weight: 400;
   letter-spacing: 0.04em;
   line-height: 1.15;
@@ -408,7 +408,7 @@ a.tag:hover {
 
 .post-title {
   font-family: var(--font-display);
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 0.75rem;
   line-height: 1.1;
@@ -664,7 +664,7 @@ a.tag:hover {
 
 /* === Responsive === */
 @media (max-width: 600px) {
-  html { font-size: 16px; }
+  html { font-size: 17px; }
 
   .site-title {
     font-size: 1.2rem;
