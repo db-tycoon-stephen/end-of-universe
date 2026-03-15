@@ -1,18 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Orbital ring (behind planet) -->
-  <ellipse cx="16" cy="17" rx="14" ry="5" fill="none" stroke="#60d0d0" stroke-width="1" opacity="0.4"/>
-  <!-- Planet body -->
-  <circle cx="16" cy="15" r="9" fill="#1a1a2e"/>
-  <!-- Planet band highlight -->
-  <ellipse cx="16" cy="14" rx="8.5" ry="2.5" fill="none" stroke="#e8a040" stroke-width="1.2" opacity="0.7"/>
-  <!-- Planet surface accent -->
-  <path d="M9.5 11 A9 9 0 0 1 22.5 11" fill="none" stroke="#d4d4e8" stroke-width="0.8" opacity="0.3"/>
-  <!-- Orbital ring (in front of planet) -->
-  <path d="M2 17 A14 5 0 0 0 30 17" fill="none" stroke="#60d0d0" stroke-width="1" opacity="0.4"/>
-  <!-- Moon -->
-  <circle cx="27" cy="12" r="2.5" fill="#e8a040"/>
-  <!-- Moon shadow/crescent -->
-  <circle cx="28" cy="11.5" r="2" fill="#1a1a2e" opacity="0.3"/>
-  <!-- Planet edge highlight -->
-  <circle cx="16" cy="15" r="9" fill="none" stroke="#60d0d0" stroke-width="0.6" opacity="0.5"/>
+  <!-- Planet body — sketchy circle -->
+  <circle cx="15" cy="16" r="9.5" fill="none" stroke="#d4d4e8" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="0.5 0"/>
+  <!-- Second pass to make it look hand-drawn (slightly offset) -->
+  <circle cx="15.3" cy="15.7" r="9.2" fill="none" stroke="#d4d4e8" stroke-width="0.6" opacity="0.4" stroke-linecap="round"/>
+  <!-- Planet surface detail — a wobbly line across -->
+  <path d="M6.5 14 C9 12.5, 12 16, 15 14.5 S21 13, 24 15" fill="none" stroke="#d4d4e8" stroke-width="0.9" stroke-linecap="round" opacity="0.5"/>
+  <!-- Another surface line -->
+  <path d="M7.5 18 C10 19, 13 17, 16 18.5 S20 20, 23 18" fill="none" stroke="#d4d4e8" stroke-width="0.7" stroke-linecap="round" opacity="0.35"/>
+  <!-- Orbital ring — loose sketchy ellipse -->
+  <ellipse cx="15" cy="17" rx="14.5" ry="5" fill="none" stroke="#d4d4e8" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <!-- Second orbital pass -->
+  <ellipse cx="15.2" cy="16.8" rx="14.2" ry="4.7" fill="none" stroke="#d4d4e8" stroke-width="0.5" stroke-linecap="round" opacity="0.3"/>
+  <!-- Moon — small sketchy circle -->
+  <circle cx="27" cy="9" r="2.8" fill="none" stroke="#d4d4e8" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- Moon second pass -->
+  <circle cx="27.2" cy="8.8" r="2.5" fill="none" stroke="#d4d4e8" stroke-width="0.5" opacity="0.4" stroke-linecap="round"/>
+  <!-- Small crater on moon -->
+  <circle cx="27.5" cy="8.5" r="0.8" fill="none" stroke="#d4d4e8" stroke-width="0.6" opacity="0.4"/>
 </svg>
