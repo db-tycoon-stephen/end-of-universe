@@ -1,5 +1,5 @@
 ---
-title: "The View from the End"
+title: "The Beginning of the End"
 date: 2026-03-15
 tags: ["small-business", "ai", "economics", "manifesto"]
 description: "A small-business owner stares into the void where the future used to be and decides to build something anyway."
