@@ -7,18 +7,14 @@ interface Props {
   date: Date;
   tags: string[];
   description: string;
-  towelRating?: number;
 }
 
-const { title, date, tags, description, towelRating } = Astro.props;
+const { title, date, tags, description } = Astro.props;
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
-
-const towelFull = '[@]';
-const towelEmpty = '[ ]';
 ---
 <BaseLayout title={`${title} | The Startup at the End of the Universe`}>
   <SEO
@@ -33,12 +29,7 @@ const towelEmpty = '[ ]';
     <header class="post-header">
       <h1 class="post-title">{title}</h1>
       <div class="post-meta">
-        <time datetime={date.toISOString()}>Stardate: {formattedDate}</time>
-        {towelRating && (
-          <span class="towel-rating" title={`Towel Rating: ${towelRating}/5`}>
-            Towels: {towelFull.repeat(towelRating)}{towelEmpty.repeat(5 - towelRating)}
-          </span>
-        )}
+        <time datetime={date.toISOString()}>{formattedDate}</time>
       </div>
     </header>
 
@@ -55,7 +46,7 @@ const towelEmpty = '[ ]';
     </div>
 
     <aside class="disclaimer">
-      <strong>TEMPORAL DISCLAIMER:</strong> The views expressed in this post were written at the end of the universe, where time is a bit wobbly. Any factual errors are the fault of entropy, not the author. Don't Panic.
+      <strong>TEMPORAL DISCLAIMER:</strong> The views expressed in this post were written at the end of the universe, where time is a bit wobbly. Any factual errors are the fault of entropy, not the author.
     </aside>
   </article>
 </BaseLayout>

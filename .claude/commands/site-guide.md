@@ -22,7 +22,6 @@ title: "Your Post Title"
 date: YYYY-MM-DD
 tags: ["tag1", "tag2"]
 description: "One-sentence description for the post card and SEO."
-towelRating: 3
 ---
 ```
 
@@ -36,7 +35,7 @@ towelRating: 3
 ## Editing an Existing Post
 
 - Posts live in `site/src/content/blog/` as `.md` files
-- Edit the frontmatter to update metadata (title, tags, description, towelRating)
+- Edit the frontmatter to update metadata (title, tags, description)
 - Edit the body content below the `---` frontmatter separator
 
 ---
@@ -69,23 +68,12 @@ Push or merge to `main` with changes in `site/**` → deploy workflow triggers a
 
 ## Customizing the Site
 
-- **CSS**: `site/src/styles/global.css` — space-themed greens with dark mode
+- **CSS**: `site/src/styles/global.css` — midnight blue with starfield, retro accents
 - **Header/Footer**: `site/src/components/Header.astro` and `Footer.astro`
 - **Post layout**: `site/src/layouts/PostLayout.astro`
 - **Homepage**: `site/src/pages/index.astro` — shows latest 10 posts
 - **About page**: `site/src/pages/about.astro`
 - **SEO**: `site/src/components/SEO.astro` — Open Graph, Twitter Cards, JSON-LD
-
----
-
-## Towel Rating System
-
-Posts use an optional `towelRating` field (1-5):
-- 1 Towel — A bit of fluff
-- 2 Towels — Worth a read if you've got a spare moment
-- 3 Towels — Solid, entertaining or informative
-- 4 Towels — Properly good, send it to a friend
-- 5 Towels — The answer to life, the universe, and everything
 
 ---
 
@@ -99,3 +87,4 @@ Posts use an optional `towelRating` field (1-5):
 | Post template | `site/src/layouts/PostLayout.astro` |
 | Content schema | `site/src/content.config.ts` |
 | Deploy workflow | `.github/workflows/deploy.yml` |
+| Writing guide | `.claude/commands/draft-post.md` |
