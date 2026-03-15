@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Orbital ring (behind planet) -->
+  <ellipse cx="16" cy="17" rx="14" ry="5" fill="none" stroke="#60d0d0" stroke-width="1" opacity="0.4"/>
+  <!-- Planet body -->
+  <circle cx="16" cy="15" r="9" fill="#1a1a2e"/>
+  <!-- Planet band highlight -->
+  <ellipse cx="16" cy="14" rx="8.5" ry="2.5" fill="none" stroke="#e8a040" stroke-width="1.2" opacity="0.7"/>
+  <!-- Planet surface accent -->
+  <path d="M9.5 11 A9 9 0 0 1 22.5 11" fill="none" stroke="#d4d4e8" stroke-width="0.8" opacity="0.3"/>
+  <!-- Orbital ring (in front of planet) -->
+  <path d="M2 17 A14 5 0 0 0 30 17" fill="none" stroke="#60d0d0" stroke-width="1" opacity="0.4"/>
+  <!-- Moon -->
+  <circle cx="27" cy="12" r="2.5" fill="#e8a040"/>
+  <!-- Moon shadow/crescent -->
+  <circle cx="28" cy="11.5" r="2" fill="#1a1a2e" opacity="0.3"/>
+  <!-- Planet edge highlight -->
+  <circle cx="16" cy="15" r="9" fill="none" stroke="#60d0d0" stroke-width="0.6" opacity="0.5"/>
+</svg>
