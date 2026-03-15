@@ -1,15 +1,20 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import SEO from '../components/SEO.astro';
+import AudioPlayer from '../components/AudioPlayer.astro';
 
 interface Props {
   title: string;
   date: Date;
   tags: string[];
   description: string;
+  audio?: string;
 }
 
-const { title, date, tags, description } = Astro.props;
+const { title, date, tags, description, audio } = Astro.props;
+
+// Derive sync file path from audio path: /audio/slug.mp3 → /audio/sync/slug.json
+const syncFile = audio ? audio.replace('/audio/', '/audio/sync/').replace('.mp3', '.json') : undefined;
 const formattedDate = date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
@@ -32,6 +37,8 @@ const formattedDate = date.toLocaleDateString('en-US', {
         <time datetime={date.toISOString()}>{formattedDate}</time>
       </div>
     </header>
+
+    {audio && <AudioPlayer src={audio} title={title} syncFile={syncFile} />}
 
     <div class="post-content">
       <slot />

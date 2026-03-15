@@ -22,6 +22,7 @@ title: "Your Post Title"
 date: YYYY-MM-DD
 tags: ["tag1", "tag2"]
 description: "One-sentence description for the post card and SEO."
+audio: "/audio/YYYY-MM-DD-slug.mp3"  # optional — adds audio player + podcast feed
 ---
 ```
 
@@ -29,6 +30,7 @@ description: "One-sentence description for the post card and SEO."
 4. For images, place PNGs in `site/public/charts/YYYY-MM-DD/` and reference as `/charts/YYYY-MM-DD/filename.png`
 5. Image captions: put italic text on the line after the image (`*Caption text*`)
 6. Tables use standard Markdown table syntax
+7. For audio: record MP3, save to `site/public/audio/`, add `audio` field to frontmatter
 
 ---
 
@@ -86,5 +88,9 @@ Push or merge to `main` with changes in `site/**` → deploy workflow triggers a
 | CSS styling | `site/src/styles/global.css` |
 | Post template | `site/src/layouts/PostLayout.astro` |
 | Content schema | `site/src/content.config.ts` |
+| Audio files | `site/public/audio/` |
+| Podcast feed | `site/src/pages/podcast.xml.ts` |
+| Audio player | `site/src/components/AudioPlayer.astro` |
 | Deploy workflow | `.github/workflows/deploy.yml` |
 | Writing guide | `.claude/commands/draft-post.md` |
+| Publish guide | `.claude/commands/publish-post.md` |
