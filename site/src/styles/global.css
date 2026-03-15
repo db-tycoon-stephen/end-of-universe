@@ -34,7 +34,7 @@
   --max-width: 680px;
   --font-body: 'Fraunces', Georgia, serif;
   --font-heading: 'Barlow Semi Condensed', sans-serif;
-  --font-display: 'Barlow Semi Condensed', sans-serif;
+  --font-display: 'Bungee', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 }
 
@@ -189,10 +189,10 @@ main {
 
 .site-title {
   font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1.1;
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
   color: var(--color-accent-cyan);
   text-transform: uppercase;
 }
@@ -667,7 +667,7 @@ a.tag:hover {
   html { font-size: 16px; }
 
   .site-title {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .site-nav {
