@@ -22,11 +22,53 @@ Report findings to the user.
 ## Step 3: Audio Recording
 
 Ask the user if they want to record audio for this post. If yes:
-1. Determine the filename: `YYYY-MM-DD-slug.mp3` (matching the post filename)
-2. Open QuickTime Player for recording (or remind them to use Voice Memos)
-3. Once recorded, the MP3 should be saved to `site/public/audio/YYYY-MM-DD-slug.mp3`
-4. Add `audio: "/audio/YYYY-MM-DD-slug.mp3"` to the post frontmatter
-5. Verify the audio file exists at the expected path
+
+### Recording
+The user records themselves reading the post aloud:
+- **QuickTime Player** > File > New Audio Recording (most reliable on macOS)
+- **Voice Memos** on Mac or iPhone
+- Save raw file anywhere accessible (e.g. project root)
+
+### Processing (ffmpeg)
+Process the raw recording — normalize levels, trim dead air, speed up:
+
+```bash
+ffmpeg -i /path/to/raw-recording.m4a \
+  -af "silenceremove=start_periods=1:start_silence=0.3:start_threshold=-35dB:stop_periods=-1:stop_silence=0.8:stop_threshold=-35dB,loudnorm=I=-16:TP=-1.5:LRA=11,atempo=1.2" \
+  -codec:a libmp3lame -qscale:a 2 -ar 44100 \
+  site/public/audio/YYYY-MM-DD-slug.mp3 -y
+```
+
+This trims silence, normalizes to -16 LUFS (broadcast standard), and speeds up 1.2x.
+
+### Scroll Sync Alignment (pywhispercpp — local, no API keys)
+Generate paragraph timestamps for the scroll-sync audio player:
+
+```bash
+python3 site/scripts/align-audio.py \
+  site/src/content/blog/YYYY-MM-DD-slug.md \
+  site/public/audio/YYYY-MM-DD-slug.mp3 \
+  site/public/audio/sync/YYYY-MM-DD-slug.json
+```
+
+This runs Whisper locally via whisper.cpp C++ bindings. Uses Metal GPU on Apple Silicon. No PyTorch, no API keys. The `base` model (147MB) is cached after first download.
+
+The sync file enables:
+- Current paragraph highlights with accent border as audio plays
+- Page auto-scrolls to follow narration
+- Past paragraphs dim
+- SYNC toggle button for the reader
+
+### Update Frontmatter
+```yaml
+audio: "/audio/YYYY-MM-DD-slug.mp3"
+```
+
+### Commit
+Stage the post, MP3, and sync JSON:
+```
+git add site/public/audio/YYYY-MM-DD-slug.mp3 site/public/audio/sync/YYYY-MM-DD-slug.json site/src/content/blog/YYYY-MM-DD-slug.md
+```
 
 ## Step 4: Build Verification
 
@@ -38,11 +80,7 @@ Fix any issues before proceeding.
 
 ## Step 5: Commit and Deploy
 
-Stage the post and audio file (if any), commit, and push:
-- Post: `site/src/content/blog/YYYY-MM-DD-slug.md`
-- Audio: `site/public/audio/YYYY-MM-DD-slug.mp3` (if recorded)
-
-Deploy triggers automatically on push to main.
+Stage everything, commit, and push. Deploy triggers automatically on push to main.
 
 ## Step 6: Verify
 
@@ -58,4 +96,5 @@ gh run list --workflow=deploy.yml --repo sciortino/end_of_universe --limit=1
 - NEVER publish without user confirmation
 - Respect the voice — no edits that make it sound earnest, motivational, or like a LinkedIn post
 - Always ask about audio before publishing
+- Always offer scroll sync alignment when audio is recorded
 - Use the `sciortino` GitHub account for repo operations
