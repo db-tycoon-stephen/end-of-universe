@@ -34,18 +34,18 @@ Process the raw recording — normalize levels, trim dead air, speed up:
 
 ```bash
 ffmpeg -i /path/to/raw-recording.m4a \
-  -af "silenceremove=start_periods=1:start_silence=0.3:start_threshold=-35dB:stop_periods=-1:stop_silence=0.8:stop_threshold=-35dB,loudnorm=I=-16:TP=-1.5:LRA=11,atempo=1.2" \
+  -af "silenceremove=start_periods=1:start_silence=0.3:start_threshold=-35dB:stop_periods=-1:stop_silence=0.8:stop_threshold=-35dB,loudnorm=I=-19:TP=-3:LRA=11,atempo=1.2" \
   -codec:a libmp3lame -qscale:a 2 -ar 44100 \
   site/public/audio/YYYY-MM-DD-slug.mp3 -y
 ```
 
-This trims silence, normalizes to -16 LUFS (broadcast standard), and speeds up 1.2x.
+This trims silence, normalizes to -19 LUFS (comfortable podcast level), and speeds up 1.2x.
 
 ### Scroll Sync Alignment (pywhispercpp — local, no API keys)
 Generate paragraph timestamps for the scroll-sync audio player:
 
 ```bash
-python3 site/scripts/align-audio.py \
+uv run python site/scripts/align-audio.py \
   site/src/content/blog/YYYY-MM-DD-slug.md \
   site/public/audio/YYYY-MM-DD-slug.mp3 \
   site/public/audio/sync/YYYY-MM-DD-slug.json
